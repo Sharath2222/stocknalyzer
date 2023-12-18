@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import Register from './Components/Authentication/Register';
+import Login from './Components/Authentication/Login';
+import PrivateRoute from './Components/Authentication/PrivateRoute';
+import { Router,Route } from 'express';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+   
+        <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
+        
+     
+    </Router>
     </div>
   );
 }
